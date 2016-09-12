@@ -8,7 +8,9 @@ import com.vaadin.spring.annotation.UIScope;
 import com.vaadin.ui.*;
 import com.zisal.learn.vaadin.component.IComponentInitalizer;
 import com.zisal.learn.vaadin.data.EntityBarcode;
+import com.zisal.learn.vaadin.data.EntityProduct;
 import com.zisal.learn.vaadin.data.RepoBarcode;
+import com.zisal.learn.vaadin.data.RepoProduct;
 import com.zisal.learn.vaadin.util.DCGeneratorParam;
 import com.zisal.learn.vaadin.util.IDCGenerator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,8 +33,11 @@ public class ViewBarcodeGenerator extends VerticalLayout implements View, ICompo
     @Autowired
     IDCGenerator dcGenerator;
 
+    /*@Autowired
+    RepoBarcode repoBarcode;*/
+
     @Autowired
-    RepoBarcode repoBarcode;
+    RepoProduct repoProduct;
 
     @PostConstruct
     @Override
@@ -53,12 +58,12 @@ public class ViewBarcodeGenerator extends VerticalLayout implements View, ICompo
         Button button = new Button("Generate Barcode");
         panel.addComponent(button);
 
-        List<EntityBarcode> entityBarcodes = (List<EntityBarcode>) repoBarcode.findAll();
+        List<EntityProduct> entityProducts = (List<EntityProduct>) repoProduct.findAll();
         List<DCGeneratorParam> dcGeneratorParams = new ArrayList<>();
-        for (EntityBarcode entityBarcode: entityBarcodes){
+        for (EntityProduct entityProduct: entityProducts){
             DCGeneratorParam dcGeneratorParam = new DCGeneratorParam();
-            dcGeneratorParam.setCode(entityBarcode.getCode());
-            dcGeneratorParam.setFileName(entityBarcode.getCode().concat(".png"));
+            dcGeneratorParam.setCode(entityProduct.getCode());
+            dcGeneratorParam.setFileName(entityProduct.getCode().concat(".png"));
             dcGeneratorParam.setPath("E://BARCODE/");
             dcGeneratorParams.add(dcGeneratorParam);
         }

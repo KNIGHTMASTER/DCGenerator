@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
-	<name>learn-vaadin</name>
+	<name>DCGenerator</name>
 	<description>Dynamic Code with spring boot</description>
 
 	<parent>
@@ -52,6 +52,12 @@
 			<groupId>postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>9.1-901.jdbc4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.6</version>
 		</dependency>
 
 		<dependency>
@@ -161,7 +167,7 @@
 				</executions>
 			</plugin>
 
-			<plugin>
+			<!--<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
@@ -176,7 +182,7 @@
 						</webResource>
 					</webResources>
 				</configuration>
-			</plugin>
+			</plugin>-->
 
 		</plugins>
 	</build>

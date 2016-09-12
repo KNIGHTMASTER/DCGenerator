@@ -10,10 +10,7 @@ import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import com.zisal.learn.vaadin.constant.ApplicationConstant.View;
 import com.zisal.learn.vaadin.constant.GeneralConstant;
-import com.zisal.learn.vaadin.ui.scaffolding.ViewScaffoldingEmployee;
-import com.zisal.learn.vaadin.ui.view.ViewAuth;
 import com.zisal.learn.vaadin.ui.view.ViewBarcodeGenerator;
-import com.zisal.learn.vaadin.ui.view.ViewMain;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -54,8 +51,7 @@ public class UIMain extends UI implements ErrorHandler, Serializable{
 
         Navigator navigator = new Navigator(this, viewContainer);
         navigator.addProvider(viewProvider);
-        navigator.addView(GeneralConstant.Punctuation.EMPTY, ViewMain.class);
-        navigator.addView(ViewAuth.class.getSimpleName(), ViewAuth.class);
+        navigator.addView(GeneralConstant.Punctuation.EMPTY, ViewBarcodeGenerator.class);
     }
 
     private Button createNavigationButton(String caption, final String viewName) {
