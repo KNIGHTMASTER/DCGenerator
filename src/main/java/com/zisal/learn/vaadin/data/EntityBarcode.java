@@ -8,7 +8,7 @@ import java.math.BigInteger;
  * Created by Ladies Man on 5/18/2016.
  */
 @Entity
-@Table(name = "mst_barcode", schema = "master")
+@Table(name = "mst_barcode")
 public class EntityBarcode implements Serializable{
 
     private static final long serialVersionUID = -5367409757533734891L;
